@@ -1,0 +1,59 @@
+{% extends 'ubase.html.twig' %}
+{% block body %}
+    <div class="col-md-10 col-md-offset-1"> 
+        <div class="col-md-12" id="toPrint"> 
+            <div class="alert alert-info" role="alert">
+                Print the transaction slip and pay to any Bank of your choice. You can edit registration after 24 hours of payment.
+            </div>
+            <h3 style="text-align: center;">Students Edit Application Payment Details - 2016/2017 </h3>
+            <h4 style="text-align: center;">Transaction Slip</h4>
+            <table class="table table-hover table-bordered" >
+                <tr>
+                     <td>Application #:</td>
+                     <td>{{ appNo }}</td>
+                </tr>
+                <tr>
+                     <td>Name:</td>
+                     <td>{{ name }}</td>
+                </tr>
+                <tr>
+                     <td>Programme:</td>
+                     <td>{{ programme }}</td>
+                </tr>
+                <tr>
+                     <td>Email:</td>
+                     <td>{{ email }}</td>
+                </tr>
+                <tr>
+                     <td>Phone #:</td>
+                     <td>{{ phone }}</td>
+                </tr>
+                <tr>
+                     <td>Invoice #:</td>
+                     <td>{{ invoice }}</td>
+                </tr>
+            </table>
+            
+            
+             <table class="table table-hover table-bordered">
+                <tr>
+                     <th style="text-align: center;">1</th>
+                     <th>Edit HND Application:</th>
+                     <th>1000.00</th>
+                </tr>
+                <tr>
+                     <td></td>
+                     <th style="text-align: right;" align="right"> Total </th>
+                     <th>1000.00</th>
+                </tr>
+                <tr>
+                    <td align="center" colspan="3">
+                        <form class="form-inline">
+                            <button onclick="printDiv('toPrint')" type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-print" aria-hidden="true"><span style='visibility:hidden;'>ii</span></span>Print Transaction Slip</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+{% endblock %}

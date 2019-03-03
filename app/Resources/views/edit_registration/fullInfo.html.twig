@@ -1,0 +1,303 @@
+{% extends 'ubase.html.twig' %}
+{% block body %}
+    <div class="col-md-10 col-md-offset-1"> 
+        <div class="col-md-10 col-md-offset-1"> 
+            {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+                <div class="alert alert-info" role="alert">Complete the form below appropriately and click submit, note that fields marked <span style="color:red; font-weight:600; font-size:1.3em;">*</span> are compulsory.</div>
+                {% if form_errors(form) %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ form_errors(form) }}
+                    </div>
+                {% elseif errors%}
+                    {%  for error in errors %}
+                    <div class="alert alert-danger" role="alert">
+                        <li>{{ error }}</li>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+                <h3>Choose Programme</h3>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Programme</label>
+                    {% if form_errors(form.programme) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.programme) }}
+                        </div>
+                    {% endif %}
+                    
+                    {{ form_widget(form.programme, {'attr': {'class': 'form-control'}}) }}                   
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Course</label>
+                    {% if form_errors(form.course) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.course) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.course, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <h3>Personal Information</h3>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Application Number</label>
+                    {% if form_errors(form.appNo) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.appNo) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.appNo, {'attr': {'class': 'form-control'}}) }}      
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Surname</label>
+                    {% if form_errors(form.surname) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.surname) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.surname, {'attr': {'class': 'form-control'}}) }}      
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Firstname</label>
+                    {% if form_errors(form.firstname) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.firstname) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.firstname, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Othername</label>
+                    {% if form_errors(form.othername) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.othername) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.othername, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Date of Birth (yyyy-MM-dd)</label>
+                    {% if form_errors(form.dob) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.dob) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.dob, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Gender</label>
+                    {% if form_errors(form.sex) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.sex) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.sex, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                
+                <div class="form-group"> 
+                    <label for="exampleInputEmail1">State of Origin</label>
+                    {% if form_errors(form.state) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.state) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.state, {'attr': {'class': 'form-control'}}) }}   
+                </div>
+                
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Home Towm</label>
+                    {% if form_errors(form.hometown) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.hometown) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.hometown, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Marital Status</label>
+                    {% if form_errors(form.mstatus) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.mstatus) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.mstatus, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Physical Disability</label>
+                    {% if form_errors(form.disability) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.disability) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.disability, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <h3>Contact Information</h3>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Personal Address</label>
+                    {% if form_errors(form.address) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.address) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.address, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Mobile</label>
+                    {% if form_errors(form.mobile) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.mobile) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.mobile, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    {% if form_errors(form.email) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.email) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <h3>Next of Kin Information</h3>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Surname</label>
+                    {% if form_errors(form.nxtsname) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.nxtsname) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.nxtsname, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Othername</label>
+                    {% if form_errors(form.nxtoname) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.nxtoname) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.nxtoname, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Firstname</label>
+                    {% if form_errors(form.nxtfname) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.nxtfname) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.nxtfname, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Mobile</label>
+                    {% if form_errors(form.nxtmobile) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.nxtmobile) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.nxtmobile, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Relationship</label>
+                    {% if form_errors(form.nxtrel) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.nxtrel) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.nxtrel, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <h3>Extra Curriculum Activities</h3>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Activities</label>
+                    {% if form_errors(form.extra_act) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.extra_act) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.extra_act, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <h3>Sponsorship Information</h3>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Sponsorship Means</label>
+                    {% if form_errors(form.scholarship_means) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.scholarship_means) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.scholarship_means, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Name of Scholarship Donor</label>
+                    {% if form_errors(form.scholarship_donor_name) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.scholarship_donor_name) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.scholarship_donor_name, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <h3>A Level Information</h3>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Name of Institution</label>
+                    {% if form_errors(form.inst_name) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.inst_name) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.inst_name, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Location</label>
+                    {% if form_errors(form.location) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.location) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.location, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Registration Number</label>
+                    {% if form_errors(form.reg_no) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.reg_no) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.reg_no, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Date of Graduation (yyyy-MM-dd)</label>
+                    {% if form_errors(form.date_of_grad) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.date_of_grad) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.date_of_grad, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Qualification</label>
+                    {% if form_errors(form.qual) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.qual) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.qual, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Field of Study</label>
+                    {% if form_errors(form.field) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.field) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.field, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="alert alert-warning" role="alert">Note that names, programme and course of choice can not be changed after submission. However, editing any other detail will attract the sum of #1000</div>
+                {{ form_widget(form.submit, {'attr': {'class': 'btn btn-success'}}) }}
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

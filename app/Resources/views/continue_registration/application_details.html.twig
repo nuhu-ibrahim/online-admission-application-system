@@ -1,0 +1,89 @@
+{% extends 'ubase.html.twig' %}
+{% block body %}
+    <div class="col-md-10 col-md-offset-1"> 
+        <h3 style="text-align: center;">Students Application Details</h3>
+        <div class="col-md-12 table-bordered" id="toPrint"> 
+            
+            <table class="table table-hover table-bordered" >
+                <tr>
+                     <th colspan="2">Personal Details:</th>
+                </tr>
+                <tr>
+                     <td colspan="2"><p style="text-align:center;"><img src=" {{ asset( img ) }} " alt="PICTURE"/></p></td>
+                </tr>
+                <tr>
+                     <td>Surname:</td>
+                     <td>{{sname}}</td>
+                </tr>
+                <tr>
+                     <td>Firstname:</td>
+                     <td>{{fname}}</td>
+                </tr>
+                <tr>
+                     <td>Othername:</td>
+                     <td>{{oname}}</td>
+                </tr>
+                <tr>
+                     <td>Date of Birth:</td>
+                     <td>{{dob}}</td>
+                </tr>
+                <tr>
+                     <td>Gender:</td>
+                     <td>{{gender}}</td>
+                </tr>
+                <tr>
+                     <td>Email:</td>
+                     <td>{{email}}</td>
+                </tr>
+                <tr>
+                     <td>Phone:</td>
+                     <td>{{phone}}</td>
+                </tr>
+                <tr>
+                     <th colspan="2">Programme Details:</th>
+                </tr>
+                <tr>
+                     <td>Application No:</td>
+                     <td>{{appNo}}</td>
+                </tr>
+                <tr>
+                     <td>Programme:</td>
+                     <td>{{programme}}</td>
+                </tr>
+                <tr>
+                     <td>Course:</td>
+                     <td>{{course}}</td>
+                </tr>
+                
+                
+                <tr>
+                     <th colspan="2">A - Level Details:</th>
+                </tr>
+                <tr>
+                     <td>Name of Institution:</td>
+                     <td>{{inst}}</td>
+                </tr>
+                <tr>
+                     <td>Qualification</td>
+                     <td>{{qual}}</td>
+                </tr>
+                <tr>
+                     <td>Registration Number:</td>
+                     <td>{{reg_no}}</td>
+                </tr>
+                <tr>
+                     <td>Field of Study</td>
+                     <td>{{field}}</td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="2">
+                        <form class="form-inline">
+                            <button onclick="printDiv('toPrint')" type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-print" aria-hidden="true"><span style='visibility:hidden;'>ii</span></span>Print Application Slip</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+            
+        </div>
+    </div>
+{% endblock %}

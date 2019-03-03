@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="col-md-10 col-md-offset-1"> 
+        <div class="col-md-10 col-md-offset-1">
+            <div class="alert alert-info" role="alert">Supply your Application Number, then click Check Admission Status.</div>
+            {% if errors%}
+                    {%  for error in errors %}
+                    <div class="alert alert-danger" role="alert">
+                        <li>{{ error }}</li>
+                    </div>
+                    {% endfor %}
+            {% endif %}
+            {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Application Number</label>
+                  {% if form_errors(form.app_no) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.app_no) }}
+                        </div>
+                    {% endif %}
+                  {{ form_widget(form.app_no, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                {{ form_widget(form.submit, {'attr': {'class': 'btn btn-success'}}) }}
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

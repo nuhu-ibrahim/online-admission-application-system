@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="col-md-10 col-md-offset-1"> 
+        <div class="col-md-8 col-md-offset-2"> 
+            <p style="text-align:center;"><img src="{{ asset(img) }}" alt="image" class="img-thumbnail"></p>
+            <p style="text-align:center;">Congratulations <strong>{{ name }}!!!</strong> <br/> You have been offered admission for a 2- Year {{ programme }} in Kaduna Polytechnic, Kaduna.<br/> <strong>Course</strong> {{ course }} in the <strong>Department</strong> of {{ course }}.</p>
+        </div>
+    </div>
+{% endblock %}

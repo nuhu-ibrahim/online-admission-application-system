@@ -1,0 +1,38 @@
+{# empty Twig template #}
+{% extends 'abase.html.twig' %}
+{% block body %}
+    <div class="col-md-10 col-md-offset-1"> 
+        <div class="alert alert-info" style="text-align:center;" role="alert">List of Students that have completed Registration.</div>
+        <div class="col-md-12 table-responsive" id="toPrint">
+            <table class="table table-hover table-bordered" >
+                <tr>
+                     <th>Application No:</th>
+                     <th>Surname:</th>
+                     <th>Othername:</th>
+                     <th>Firstname:</th>
+                     <th>Email:</th>
+                     <th>Programme:</th>
+                     <th>Course:</th>
+                </tr>
+                {% for p in students %}
+                <tr>
+                    <td><a href="{{url('fullInfo')}}?appNo={{ p.appno }}">{{ p.appno }}</a></td>
+                    <td>{{p.surname}}</td>
+                    <td>{{p.othername}}</td>
+                    <td>{{p.firstname}}</td>
+                    <td>{{p.email}}</td>
+                    <td>{{p.programme}}</td>
+                    <td>{{p.course}}</td>
+                </tr>
+                {% endfor%}
+                <tr>
+                    <td align="center" colspan="2">
+                        <form class="form-inline">
+                            <button type="submit" onclick="printDiv('toPrint')" class="btn btn-primary"><span class="glyphicon glyphicon-print" aria-hidden="true"><span style='visibility:hidden;'>ii</span></span>Print List</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+{% endblock %}

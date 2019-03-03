@@ -1,0 +1,30 @@
+{% extends 'abase.html.twig' %}
+{% block body %}
+    <div class="col-md-10 col-md-offset-1"> 
+        <div class="col-md-10 col-md-offset-1">
+            <div class="alert alert-info" role="alert">Choose the Excel file containing the list, then click Upload List</div>
+            {% if success%}
+                <div class="alert alert-info" role="alert">Students uploaded and congratulatory mails sent successfully.</div>
+            {% endif %}
+            {% if errors%}
+                    {%  for error in errors %}
+                    <div class="alert alert-danger" role="alert">
+                        <li>{{ error }}</li>
+                    </div>
+                    {% endfor %}
+            {% endif %}
+            {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Excel File</label>
+                  {% if form_errors(form.file) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.file) }}
+                        </div>
+                    {% endif %}
+                  {{ form_widget(form.file) }}
+                </div>
+                {{ form_widget(form.submit, {'attr': {'class': 'btn btn-success'}}) }}
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

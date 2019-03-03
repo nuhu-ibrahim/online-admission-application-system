@@ -1,0 +1,107 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="col-md-10 col-md-offset-1"> 
+        <div class="col-md-10 col-md-offset-1"> 
+            {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+                <div class="alert alert-info" role="alert">Fill the form below appropriately and click Generate Invoice, note that fields marked <span style="color:red; font-weight:600; font-size:1.3em;">*</span> are compulsory.</div>
+                {% if form_errors(form) %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ form_errors(form) }}
+                    </div>
+                {% elseif errors%}
+                    {%  for error in errors %}
+                    <div class="alert alert-danger" role="alert">
+                        <li>{{ error }}</li>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+                <h3>Choose Programme</h3>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Programme</label>
+                    {% if form_errors(form.programme) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.programme) }}
+                        </div>
+                    {% endif %}
+                    
+                    {{ form_widget(form.programme, {'attr': {'class': 'form-control'}}) }}                   
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Course</label>
+                    {% if form_errors(form.course) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.course) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.course, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <h3>Personal Information</h3>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Surname</label>
+                    {% if form_errors(form.surname) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.surname) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.surname, {'attr': {'class': 'form-control'}}) }}      
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Othername</label>
+                    {% if form_errors(form.othername) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.othername) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.othername, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Firstname</label>
+                    {% if form_errors(form.firstname) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.firstname) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.firstname, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group"> 
+                    <label for="exampleInputEmail1">State of Origin</label>
+                    {% if form_errors(form.state) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.state) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.state, {'attr': {'class': 'form-control'}}) }}   
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Mobile</label>
+                    {% if form_errors(form.mobile) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.mobile) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.mobile, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    {% if form_errors(form.email) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.email) }}
+                        </div>
+                    {% endif %}
+                    {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  {% if form_errors(form.password) %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form.password) }}
+                        </div>
+                    {% endif %}
+                  {{ form_widget(form.password, {'attr': {'class': 'form-control'}}) }} 
+                </div>
+                <div class="alert alert-warning" role="alert">Note that names, programme and course of choice can not be changed after submission.</div>
+                {{ form_widget(form.submit, {'attr': {'class': 'btn btn-success'}}) }}
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
